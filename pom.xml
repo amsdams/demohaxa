@@ -40,7 +40,7 @@
 	<dependencies>
 	</dependencies>
 	<modules>
-		<module>dtos</module>
-		<module>producer</module>
+		<module>book-dtos</module>
+		<module>book-server</module>
 	</modules>
 </project>
