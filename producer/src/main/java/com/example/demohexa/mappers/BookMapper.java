@@ -11,13 +11,13 @@ import com.example.demohexa.entity.Book;
 @Mapper
 public interface BookMapper {
 
-    BookMapper INSTANCE = Mappers.getMapper(BookMapper.class);
+	BookMapper INSTANCE = Mappers.getMapper(BookMapper.class);
 
-    BookDto bookToBookDto(Book book);
+	BookDto bookToBookDto(Book book);
 
-    Book bookDtoToBook(BookDto bookDto);
+	Book bookDtoToBook(BookDto bookDto);
 
-    List<BookDto> bookListToBookDtoList(List<Book> bookList);
+	List<BookDto> bookListToBookDtoList(List<Book> bookList);
 
-    List<Book> BookDtoListTobookList(List<BookDto> BookDtoList);
+	List<Book> BookDtoListTobookList(List<BookDto> BookDtoList);
 }

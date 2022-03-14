@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 @Builder
 public class BookDto {
 
-    private Long id;
+	private Long id;
 
-    private String title;
+	private String title;
 
-    private String description;
+	private String description;
 
-    private Double price;
+	private Double price;
 }

@@ -11,13 +11,13 @@ import com.example.demohexa.service.BookServiceImpl;
 @Configuration
 public class BookConfig {
 
-    @Bean
-    public BookPersistencePort bookPersistence(){
-        return new BookJpaAdapter();
-    }
+	@Bean
+	public BookPersistencePort bookPersistence() {
+		return new BookJpaAdapter();
+	}
 
-    @Bean
-    public BookServicePort bookService(){
-        return new BookServiceImpl(bookPersistence());
-    }
+	@Bean
+	public BookServicePort bookService() {
+		return new BookServiceImpl(bookPersistence());
+	}
 }

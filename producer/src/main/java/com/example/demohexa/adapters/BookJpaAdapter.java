@@ -15,46 +15,46 @@ import com.example.demohexa.repository.BookRepository;
 @Service
 public class BookJpaAdapter implements BookPersistencePort {
 
-    @Autowired
-    private BookRepository bookRepository;
+	@Autowired
+	private BookRepository bookRepository;
 
-    @Override
-    public BookDto addBook(BookDto bookDto) {
+	@Override
+	public BookDto addBook(BookDto bookDto) {
 
-        Book book = BookMapper.INSTANCE.bookDtoToBook(bookDto);
+		Book book = BookMapper.INSTANCE.bookDtoToBook(bookDto);
 
-        Book bookSaved = bookRepository.save(book);
+		Book bookSaved = bookRepository.save(book);
 
-        return BookMapper.INSTANCE.bookToBookDto(bookSaved);
-    }
+		return BookMapper.INSTANCE.bookToBookDto(bookSaved);
+	}
 
-    @Override
-    public void deleteBookById(Long id) {
-        bookRepository.deleteById(id);
-    }
+	@Override
+	public void deleteBookById(Long id) {
+		bookRepository.deleteById(id);
+	}
 
-    @Override
-    public BookDto updateBook(BookDto bookDto) {
-        return addBook(bookDto);
-    }
+	@Override
+	public BookDto updateBook(BookDto bookDto) {
+		return addBook(bookDto);
+	}
 
-    @Override
-    public List<BookDto> getBooks() {
+	@Override
+	public List<BookDto> getBooks() {
 
-        List<Book> bookList = bookRepository.findAll();
+		List<Book> bookList = bookRepository.findAll();
 
-        return BookMapper.INSTANCE.bookListToBookDtoList(bookList);
-    }
+		return BookMapper.INSTANCE.bookListToBookDtoList(bookList);
+	}
 
-    @Override
-    public BookDto getBookById(Long bookId) {
+	@Override
+	public BookDto getBookById(Long bookId) {
 
-        Optional<Book> book = bookRepository.findById(bookId);
+		Optional<Book> book = bookRepository.findById(bookId);
 
-        if (book.isPresent()) {
-            return BookMapper.INSTANCE.bookToBookDto(book.get());
-        }
+		if (book.isPresent()) {
+			return BookMapper.INSTANCE.bookToBookDto(book.get());
+		}
 
-        return null;
-    }
+		return null;
+	}
 }

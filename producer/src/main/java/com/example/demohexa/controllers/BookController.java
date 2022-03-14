@@ -19,31 +19,31 @@ import com.example.demohexa.ports.api.BookServicePort;
 @RequestMapping("/book")
 public class BookController {
 
-    @Autowired
-    private BookServicePort bookServicePort;
+	@Autowired
+	private BookServicePort bookServicePort;
 
-    @PostMapping("/add")
-    public BookDto addBook(@RequestBody BookDto bookDto) {
-        return bookServicePort.addBook(bookDto);
-    }
+	@PostMapping("/add")
+	public BookDto addBook(@RequestBody BookDto bookDto) {
+		return bookServicePort.addBook(bookDto);
+	}
 
-    @PutMapping("/update")
-    public BookDto updateBook(@RequestBody BookDto bookDto) {
-        return bookServicePort.updateBook(bookDto);
-    }
+	@PutMapping("/update")
+	public BookDto updateBook(@RequestBody BookDto bookDto) {
+		return bookServicePort.updateBook(bookDto);
+	}
 
-    @GetMapping("/get/{id}")
-    public BookDto getBookByID(@PathVariable long id) {
-        return bookServicePort.getBookById(id);
-    }
+	@GetMapping("/get/{id}")
+	public BookDto getBookByID(@PathVariable long id) {
+		return bookServicePort.getBookById(id);
+	}
 
-    @GetMapping("/get")
-    public List<BookDto> getAllBooks() {
-        return bookServicePort.getBooks();
-    }
+	@GetMapping("/get")
+	public List<BookDto> getAllBooks() {
+		return bookServicePort.getBooks();
+	}
 
-    @DeleteMapping("/delete/{id}")
-    public void deleteBookByID(@PathVariable long id) {
-        bookServicePort.deleteBookById(id);
-    }
+	@DeleteMapping("/delete/{id}")
+	public void deleteBookByID(@PathVariable long id) {
+		bookServicePort.deleteBookById(id);
+	}
 }
