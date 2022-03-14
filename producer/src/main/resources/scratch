@@ -1,0 +1,12 @@
+expected: id: "10000104"
+organization_id: "organizationId"
+last_modified {
+  seconds: 1647276410
+  nanos: 428000000
+}
+created {
+  seconds: 1647276410
+  nanos: 428000000
+}
+contact_account_id: "account-cq"
+quotation_state: "2060940234"
